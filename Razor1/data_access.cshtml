@@ -1,0 +1,27 @@
+﻿@using WebMatrix.Data
+
+@{
+    var db = Database.Open("Razor1");
+    var query = "SELECT * FROM Library ORDER BY BookName";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    @{
+        foreach (var row in db.Query(query))
+        {
+            <span>ID : @row.ID</span><br />
+            <span>Book Name : @row.BookName</span><br />
+            <span>Author : @row.Author</span>
+            <br /><hr /><br />
+        }
+    }
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@Request.Url.LocalPath</title>
+    </head>
+    <body>
+        <h2>
+            @{
+                var max = 42;
+                var min = 12;
+
+                for (int i = min; i <= max; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        <span>@i, </span>
+                    }
+                }
+                <span> are all even.</span>
+            }
+        </h2>
+    </body>
+</html>
